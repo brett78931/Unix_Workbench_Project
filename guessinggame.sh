@@ -1,24 +1,26 @@
 #!/usr/bin/env bash
 # File: guessinggame.sh
 
+answer=$(ls | wc -l)
+
 function ask {
 	echo "Enter the number of files in the current directory:"
-	read guess
-   files=$(ls | wc -l)
+	read response
 }
 
 ask
 
-while [[ $guess -ne $files ]]
+while [[ $response -ne $answer ]]
 do
-	if [[ $guess -lt $files ]]
+	if [[ $response -lt $answer ]]
 	then
-		echo "Too low."
+		echo "Your guess was too low. Please try again."
+		read response
 	else
-		echo "Too high."
+		echo "Your guess was too high. Please try again."
+		read response
 	fi
-	ask
 done
 
-echo "Congratulations! $guess is the number of files in the current working directory!"
+echo "Correct!"
 
