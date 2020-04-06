@@ -1,14 +1,22 @@
 #!/usr/bin/env bash
 # File: guessinggame.sh
 
+#set $answer to correct number
 answer=$(ls | wc -l)
 
+#write function to ask the player to guess how many files
 function ask {
 	echo "Enter the number of files in the current directory:"
 	read response
 }
 
+#initiate function to receive response
+
 ask
+
+#construct while loop to determine if $response is NOT equal to $answer
+	#if statement within should echo out high/low and ask for another response.
+	#replace old response with new
 
 while [[ $response -ne $answer ]]
 do
@@ -22,5 +30,6 @@ do
 	fi
 done
 
-echo "Correct!"
+#congratulate player
 
+echo "Correct, congrats!"
