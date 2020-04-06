@@ -9,10 +9,10 @@ README.md : guessinggame.sh
 	echo "directory, until they guess the correct number. The user will be informed their guess is too high or too " >> README.md
 	echo "low. Once the user guesses the correct number of files in the current directory they should be congratulated." >> README.md
 
-	echo "**The date and time the make file was generated is**: " >> README.md
+	echo "**\nThe date and time the make file was generated is**: " >> README.md
 	date >> README.md
 
-	echo "**The number of lines in the guessinggame.sh**: " >> README.md
+	echo "**\nThe number of lines in the guessinggame.sh**: " >> README.md
 	grep -c '' guessinggame.sh >> README.md
 
 clean:
